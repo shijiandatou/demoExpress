@@ -1,0 +1,21 @@
+<% include ../include/header.html %>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <%=article.title%>
+        </div>
+        <div class="panel-body">
+            <%=article.content%>     
+        </div>
+        <%
+            if(user && article.user==user._id){
+        %>  
+                <div class="panel-footer">
+                    <a class='btn btn-warning' href='/articles/update/<%=article._id%>'>编辑</a>   
+                    <a class="btn btn-danger" href='/articles/delete/<%=article._id%>'>删除</a>   
+                </div>
+        <%        
+            }
+        %>
+        
+    </div>
+<% include ../include/footer.html %>
